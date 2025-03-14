@@ -45,4 +45,19 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function guesses()
+    {
+        return $this->hasMany(Guess::class);
+    }
+
+    public function score()
+    {
+        return $this->hasOne(Score::class);
+    }
+
+    public function leaderboard()
+    {
+        return $this->hasOne(Leaderboard::class);
+    }
 }
